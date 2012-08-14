@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Net;
 using System.Threading.Tasks;
+using AppDotNet.Tests.Mocks;
 using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
 
-namespace AppDotNet.Tests
+namespace AppDotNet.Tests.Tests
 {
     [TestClass]
     public class AuthenticatorTests

@@ -1,8 +1,10 @@
 ﻿using System.Reactive.Linq;
 using System.Threading.Tasks;
+using AppDotNet.Tests.Helpers;
+using AppDotNet.Tests.Mocks;
 using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
 
-namespace AppDotNet.Tests
+namespace AppDotNet.Tests.Tests
 {
     [TestClass]
     public class UserSessionTests

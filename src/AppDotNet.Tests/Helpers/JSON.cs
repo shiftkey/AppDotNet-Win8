@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.Storage;
 
-namespace AppDotNet.Tests
+namespace AppDotNet.Tests.Helpers
 {
     public static class Json
     {

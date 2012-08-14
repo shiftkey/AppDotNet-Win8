@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 
-namespace AppDotNet.Tests
+namespace AppDotNet.Tests.Mocks
 {
     public class AuthenticatorProxyWithResult : IAuthenticatorProxy
     {
