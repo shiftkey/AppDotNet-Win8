@@ -111,7 +111,10 @@
   <ItemGroup>
     <Compile Include="AuthenticatorProxyWithResult.cs" />
     <Compile Include="AuthenticatorTests.cs" />
+    <Compile Include="JSON.cs" />
+    <Compile Include="MockClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserSessionTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -121,6 +124,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Data\test_user.txt" />
     <Content Include="Images\UnitTestLogo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
