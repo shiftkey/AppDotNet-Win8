@@ -1,3 +1,5 @@
+using System.Threading.Tasks;
+
 namespace AppDotNet.Tests
 {
     public class AuthenticatorProxyWithResult : IAuthenticatorProxy
@@ -9,9 +11,9 @@ namespace AppDotNet.Tests
             this.result = result;
         }
 
-        public AuthenticationResult Authenticate(string url)
+        public Task<AuthenticationResult> Authenticate(string url)
         {
-            return new AuthenticationResult(result);
+            return Task.FromResult(new AuthenticationResult(result));
         }
     }
 }

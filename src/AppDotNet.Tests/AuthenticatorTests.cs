@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net;
+using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
 
 namespace AppDotNet.Tests
@@ -52,41 +53,41 @@ namespace AppDotNet.Tests
         }
 
         [TestMethod]
-        public void Authenticate_WhereDownstreamResultOccurs_ReturnsSuccess()
+        public async Task Authenticate_WhereDownstreamResultOccurs_ReturnsSuccess()
         {
             // arrange
             var proxy = new AuthenticatorProxyWithResult("foo");
             authenticator = new Authenticator(proxy);
 
             // act
-            var result = authenticator.Authenticate("url");
+            var result = await authenticator.Authenticate("url");
 
             Assert.IsTrue(result.IsSuccess);
         }
 
 
         [TestMethod]
-        public void Authenticate_WhereDownstreamResultEmpty_ReturnsFalse()
+        public async Task Authenticate_WhereDownstreamResultEmpty_ReturnsFalse()
         {
             // arrange
             var proxy = new AuthenticatorProxyWithResult("");
             authenticator = new Authenticator(proxy);
 
             // act
-            var result = authenticator.Authenticate("url");
+            var result = await authenticator.Authenticate("url");
 
             Assert.IsFalse(result.IsSuccess);
         }
 
         [TestMethod]
-        public void Authenticate_WhereDownstreamResultOccurs_ReturnsToken()
+        public async Task Authenticate_WhereDownstreamResultOccurs_ReturnsToken()
         {
             // arrange
             var proxy = new AuthenticatorProxyWithResult("foo");
             authenticator = new Authenticator(proxy);
 
             // act
-            var result = authenticator.Authenticate("url");
+            var result = await authenticator.Authenticate("url");
 
             Assert.AreEqual("foo", result.AccessToken);
         }

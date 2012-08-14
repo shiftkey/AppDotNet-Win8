@@ -1,14 +1,16 @@
 using System;
 using System.Net;
+using System.Threading.Tasks;
 
-namespace AppDotNet.Tests
+namespace AppDotNet
 {
     public class Authenticator
     {
         readonly IAuthenticatorProxy authenticatorProxy;
         public static readonly string[] AllScopes = new[] { "stream", "email", "write_post", "follow", "messages", "export" };
 
-        public Authenticator() : this(new AuthenticatorProxyWithResult("foo"))
+        public Authenticator() 
+            : this(new WebAuthenticationBrokerProxy())
         {
 
         }
@@ -34,7 +36,7 @@ namespace AppDotNet.Tests
                                  clientId, redirectUri, scopes);
         }
 
-        public AuthenticationResult Authenticate(string url)
+        public Task<AuthenticationResult> Authenticate(string url)
         {
             return authenticatorProxy.Authenticate(url);
         }

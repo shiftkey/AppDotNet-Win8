@@ -109,10 +109,8 @@
     <SDKReference Include="TestPlatform, Version=11.0" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Authenticator.cs" />
     <Compile Include="AuthenticatorProxyWithResult.cs" />
     <Compile Include="AuthenticatorTests.cs" />
-    <Compile Include="IAuthenticatorProxy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -149,6 +147,12 @@
     <Reference Include="System.Reactive.PlatformServices">
       <HintPath>..\packages\Rx-PlatformServices.2.0.20622-rc\lib\WinRT45\System.Reactive.PlatformServices.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AppDotNet\AppDotNet.csproj">
+      <Project>{ED959482-17C2-4061-9684-60188D756532}</Project>
+      <Name>AppDotNet</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
     <VisualStudioVersion>11.0</VisualStudioVersion>
