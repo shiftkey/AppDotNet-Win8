@@ -7,18 +7,25 @@ namespace AppDotNet.Tests
     [TestClass]
     public class UserSessionTests
     {
+        readonly MockClient client;
+        readonly UserSession session;
+
+        public UserSessionTests()
+        {
+            client = new MockClient();
+            session = new UserSession("token", client);
+        }
+        
         [TestMethod]
         public async Task GetUser_WithMockResponse_MapsToUser()
         {
             // arrange
-            var client = new MockClient();
             client.SetResult(await Json.FromFile("data\\test_user.txt"));
-            var session = new UserSession("token", client);
-
+        
             // act 
             var user = await session.GetUser("something");
 
-            Assert.AreEqual("Mark Thurman", user.name);
+            Assert.AreEqual("Mark Thurman", user.Name);
         }
     }
 }

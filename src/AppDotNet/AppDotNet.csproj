@@ -101,6 +101,13 @@
   <ItemGroup>
     <Compile Include="AuthenticationResult.cs" />
     <Compile Include="Authenticator.cs" />
+    <Compile Include="Entities\Counts.cs" />
+    <Compile Include="Entities\Image.cs" />
+    <Compile Include="Entities\Description.cs" />
+    <Compile Include="Entities\Entities.cs" />
+    <Compile Include="Entities\Hashtag.cs" />
+    <Compile Include="Entities\Link.cs" />
+    <Compile Include="Entities\Mention.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="IAuthenticatorProxy.cs" />
     <Compile Include="IHttpClient.cs" />
