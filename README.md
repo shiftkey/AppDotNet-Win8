@@ -31,7 +31,9 @@ To authenticate the user
 
 To query for data
 
-    var token = FetchCachedToken();
-    var client = new AppNetClient(token);
-    client.GetTimeline()
-    	  .Subscribe(DisplayTimeline);
+    var client = new UserSession("access-token");
+    // NOTE: observables now play nice with async/await!
+    var user = await client.GetUser("shiftkey");
+    var fullName = user.Name;
+
+
