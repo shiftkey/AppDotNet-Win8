@@ -6,7 +6,7 @@ App.NET client for Windows 8
  - authenticate and query [App.NET](https://alpha.app.net/) data for a user
  - simple, succinct code
  - introduce Reactive Extensions to the masses
- - target Portable Library Tools (in future, partial support possible in V2)
+ - target Portable Library Tools (in future, partial support possible in Rx V2)
 
 ## Features to support
 
