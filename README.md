@@ -22,8 +22,12 @@ App.NET client for Windows 8
 
 To authenticate the user
 
-    var url = Authenticator.CreateUrl("appid", "appSecret");
-    var result = await WebAuthenticationBroker.AuthenticateAsync(url);
+    var auth = new Authenticator();
+    var url = auth.CreateUrl("my-client-id", "http://my-site.com/redirect/uri");
+    var result = await auth.Authenticate(url);
+    if (result.IsSuccess) {
+        var accessToken = result.AccessToken;
+    }
 
 To query for data
 
