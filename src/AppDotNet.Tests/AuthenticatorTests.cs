@@ -65,7 +65,6 @@ namespace AppDotNet.Tests
             Assert.IsTrue(result.IsSuccess);
         }
 
-
         [TestMethod]
         public async Task Authenticate_WhereDownstreamResultEmpty_ReturnsFalse()
         {

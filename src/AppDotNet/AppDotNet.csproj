@@ -99,6 +99,7 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AuthenticationResult.cs" />
     <Compile Include="Authenticator.cs" />
     <Compile Include="IAuthenticatorProxy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
