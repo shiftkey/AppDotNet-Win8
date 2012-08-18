@@ -29,5 +29,13 @@ namespace AppDotNet
                          .ContinueWith(t => JsonConvert.DeserializeObject<User>(t.Result))
                          .ToObservable();
         }
+
+        public IObservable<Post> GetPost(string id)
+        {
+            var uri = string.Format("https://alpha-api.app.net/stream/0/posts/{0}", id);
+            return client.Get(uri, token)
+                         .ContinueWith(t => JsonConvert.DeserializeObject<Post>(t.Result))
+                         .ToObservable();
+        }
     }
 }

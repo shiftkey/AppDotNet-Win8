@@ -29,6 +29,18 @@ namespace AppDotNet.Tests.Tests
 
             Assert.AreEqual("Mark Thurman", user.Name);
         }
+
+        [TestMethod]
+        public async Task GetPost_WithMockResponse_MapsToPost()
+        {
+            // arrange
+            client.SetResult(await Json.FromFile("data\\test_post.txt"));
+
+            // act 
+            var post = await session.GetPost("1");
+
+            Assert.AreEqual("1", post.id);
+        }
     }
 }
 
